@@ -11,6 +11,7 @@ def attack(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} нанёс урон противнику равный'
                 f'{5 + randint(-3, -1)}')
+    return 'Неверный класс персонажа'
 
 
 def defence(char_name: str, char_class: str) -> str:
@@ -20,6 +21,7 @@ def defence(char_name: str, char_class: str) -> str:
         return (f'{char_name} блокировал {10 + randint(-2, 2)} урона')
     if char_class == 'healer':
         return (f'{char_name} блокировал {10 + randint(2, 5)} урона')
+    return 'Неверный класс персонажа'
 
 
 def special(char_name: str, char_class: str) -> str:
@@ -32,6 +34,7 @@ def special(char_name: str, char_class: str) -> str:
     if char_class == 'healer':
         return (f'{char_name} применил специальное умение'
                 f'«Защита {10 + 30}»')
+    return 'Неверный класс персонажа'
 
 
 def start_training(char_name: str, char_class: str) -> str:
@@ -46,7 +49,7 @@ def start_training(char_name: str, char_class: str) -> str:
           'defence — чтобы блокировать атаку противника или'
           'special — чтобы использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
-    cmd: str = None
+    cmd: str = ''
     while cmd != 'skip':
         cmd = input('Введи команду: ')
         if cmd == 'attack':
