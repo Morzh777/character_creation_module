@@ -70,7 +70,7 @@ def choice_char_class(char_name: str) -> Character:
     классом персонажа.
     """
     # Словарь, в котором соотносится ввод пользователя и класс персонажа.
-    game_classes = { 
+    game_classes = {
         'warrior': Warrior,
         'mage': Mage,
         'healer': Healer
